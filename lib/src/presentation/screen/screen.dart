@@ -5,8 +5,3 @@ export 'auth/register/register_step_2.dart';
 export 'auth/register/register_step_3.dart';
 export 'auth/register/register_success.dart';
 export 'main/main_screen.dart';
-export 'client/edit_profile/edit_profile_screen.dart';
-export 'client/exercises/exercises_screen.dart';
-export 'client/detail_exercise/detail_exercise_screen.dart';
-export 'coach/coach_workouts/coach_workout_screen.dart';
-export 'coach/workout_definitions/workout_definitions_screen.dart';

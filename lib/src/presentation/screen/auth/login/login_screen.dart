@@ -61,16 +61,9 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Box.h(26),
             ButtonPrimary(
-              text:context.l10n.lbl_sign_up,
+              text:context.l10n.lbl_sign_in,
               action: () {
-                if (userNameCtl.text == 'coach' && passwordCtl.text == '123') {
-                  AppNavigator.pushNamedAndRemoveUntil(Routes.mainScreen,
-                      arguments: AccountType.coach);
-                }
-                if (userNameCtl.text == 'client' && passwordCtl.text == '123') {
-                  AppNavigator.pushNamedAndRemoveUntil(Routes.mainScreen,
-                      arguments: AccountType.client);
-                }
+
               },
             ),
             Box.h(8),

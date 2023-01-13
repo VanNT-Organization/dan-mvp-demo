@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../screen/screen.dart';
-import '../../screen/client/workouts/workouts_screen.dart';
 import '../config.dart';
 
 class AppNavigator {
@@ -44,31 +43,6 @@ class AppNavigator {
         return _buildRoute(
           settings,
           MainScreen(accountType: accountType),
-        );
-      case Routes.editProfileScreen:
-        return _buildRoute(
-          settings,
-          const EditProfileScreen(),
-        );
-      case Routes.workoutScreen:
-        return _buildRoute(
-          settings,
-          const ClientWorkoutsScreen(),
-        );
-      case Routes.exercisesScreen:
-        return _buildRoute(
-          settings,
-          const ExercisesScreen(),
-        );
-      case Routes.detailExerciseScreen:
-        return _buildRoute(
-          settings,
-          const DetailExerciseScreen(),
-        );
-      case Routes.workoutDefinitionsScreen:
-        return _buildRoute(
-          settings,
-          const WorkoutDefinitionsScreen(),
         );
 
       default:

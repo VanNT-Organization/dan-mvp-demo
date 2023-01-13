@@ -1,18 +1,9 @@
 import 'package:flutter/material.dart';
-import '../client/calendar/calendar_screen.dart';
-import '../client/explore/explore_screen.dart';
-import '../coach/client/clients_screen.dart';
-import '../client/home/home_screen.dart';
-import '../client/profile/profile_screen.dart';
 import '../screen.dart';
 
 import '../../configs/config.dart';
 import '../../../gen/assets.gen.dart';
 import '../../widgets/export.dart';
-import '../client/workouts/workouts_screen.dart';
-import '../coach/calendar/calendar_screen.dart';
-import '../coach/home/home_screen.dart';
-import '../coach/profile/coach_profile_screen.dart';
 
 enum AccountType { client, coach }
 
@@ -32,29 +23,6 @@ class _MainScreenState extends State<MainScreen> {
   @override
   void initState() {
     super.initState();
-    switch (widget.accountType) {
-      case AccountType.client:
-        _widgetOptions = const [
-          ClientHomeScreen(),
-          ExploreScreen(),
-          ClientWorkoutsScreen(),
-          ClientCalendarScreen(),
-          ClientProfileScreen(),
-        ];
-
-        break;
-      case AccountType.coach:
-        _widgetOptions = const [
-          CoachHomeScreen(),
-          ClientsScreen(),
-          CoachWorkoutsScreen(),
-          CoachCalendarScreen(),
-          CoachProfileScreen(),
-        ];
-
-        break;
-      default:
-    }
   }
 
   void _selectTab(int index) {
