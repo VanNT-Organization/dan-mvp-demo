@@ -23,6 +23,15 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   flutter_calendar_carousel: ^2.4.1
   fl_chart: ^0.55.2
+  json_annotation: ^4.7.0
+  # Dependency Injection
+  get_it: ^7.2.0
+  # bloc state management
+  bloc: ^8.1.0
+  flutter_bloc: ^8.1.1
+  # api
+  retrofit: ^3.3.1
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:
@@ -30,6 +39,9 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   build_runner: ^2.3.3
   flutter_gen_runner: ^5.1.0+1
+  freezed: ^2.0.3+1
+  json_serializable: ^6.2.0
+  retrofit_generator: ^4.0.1
 
 flutter_gen:
   output: lib/src/gen/

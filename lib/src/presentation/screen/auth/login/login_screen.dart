@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
+import 'package:mvp/src/presentation/cubit/sign_in/sign_in_cubit.dart';
 import 'package:mvp/src/utils/utils.dart';
 import '../../../../../l10n/gen/app_localizations.dart';
 import '../../main/main_screen.dart';
@@ -15,6 +18,27 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => GetIt.instance<SignInCubit>(),
+          ),
+        ],
+        child: SignInWidget());
+  }
+}
+
+class SignInWidget extends StatefulWidget {
+  const SignInWidget({Key? key}) : super(key: key);
+
+  @override
+  State<SignInWidget> createState() => _SignInWidgetState();
+}
+
+class _SignInWidgetState extends State<SignInWidget> {
   late TextEditingController userNameCtl;
   late TextEditingController passwordCtl;
 
@@ -34,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MyScaffold(
+    return  MyScaffold(
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -46,31 +70,31 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Box.h(26),
             Text(
-             context.l10n.lbl_input_account_guide,
+              context.l10n.lbl_input_account_guide,
               style: AppFont.t.s(12).w700,
             ),
             Box.h(26),
             MyTextFormField(
-              title:context.l10n.lbl_user_name,
+              title: context.l10n.lbl_user_name,
               controller: userNameCtl,
             ),
             Box.h(26),
             MyTextFormField(
-              title:context.l10n.lbl_password,
+              title: context.l10n.lbl_password,
               controller: passwordCtl,
             ),
             Box.h(26),
             ButtonPrimary(
-              text:context.l10n.lbl_sign_in,
+              text: context.l10n.lbl_sign_in,
               action: () {
-
+                context.read<SignInCubit>().doSignIn();
               },
             ),
             Box.h(8),
             InkWell(
               onTap: () {},
               child: Text(
-               context.l10n.lbl_forgot_pass,
+                context.l10n.lbl_forgot_pass,
                 style: AppFont.t.s(14).w500.blueLv2.underline,
               ),
             ),
@@ -88,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Assets.images.appleLogo.svg(color: Palette.white),
                     Box.w(10),
                     Text(
-                     context.l10n.lbl_sign_up_apple,
+                      context.l10n.lbl_sign_up_apple,
                       style: AppFont.t.s(21).w500.white,
                     )
                   ],
@@ -109,7 +133,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Assets.images.facebookLogo.image(),
                     Box.w(10),
                     Text(
-                     context.l10n.lbl_sign_in_facebook,
+                      context.l10n.lbl_sign_in_facebook,
                       style: AppFont.t.s(21).w500.white,
                     )
                   ],
@@ -118,12 +142,12 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Box.h(28),
             Text(
-             context.l10n.lbl_new_customer,
+              context.l10n.lbl_new_customer,
               style: AppFont.t.s(24).w700.blueLv2,
             ),
             Box.h(36),
             ButtonPrimary(
-              text:context.l10n.lbl_register,
+              text: context.l10n.lbl_register,
               color: Palette.blueLv3,
               textStyle: AppFont.t.s(21).w500.blueLv2,
               action: () {
