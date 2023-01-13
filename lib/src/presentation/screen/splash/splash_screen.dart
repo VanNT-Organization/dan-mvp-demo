@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../../l10n/gen/app_localizations.dart';
 import '../../configs/config.dart';
 import '../../widgets/export.dart';
 import '../../../gen/assets.gen.dart';
@@ -30,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Assets.images.logoSplash.svg(),
             Text(
-              'TREINEI',
+              AppLocalizations.of(context)!.lbl_treinei,
               style: GoogleFonts.khand(
                 textStyle: AppFont.t.w700.s(75),
               ),

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:mvp/src/gen/assets.gen.dart';
 import 'package:mvp/src/presentation/widgets/export.dart';
 
+import '../../../../../l10n/gen/app_localizations.dart';
 import '../../../configs/config.dart';
 import '../../../widgets/drop_down/drop_down.dart';
 
@@ -25,7 +26,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBar: const MyAppBar(title: 'Register'),
+      appBar: MyAppBar(title: AppLocalizations.of(context)!.lbl_register),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -45,7 +46,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       Assets.images.cloud.svg(),
                       Box.w(8),
                       Text(
-                        'Add your photo',
+                        AppLocalizations.of(context)!.lbl_add_photo,
                         style: AppFont.t.s(12).w500.hint,
                       )
                     ]),
@@ -61,25 +62,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
             ),
             Box.h(12),
-            const MyTextFormField(
-              title: 'Full Name',
+            MyTextFormField(
+              title: AppLocalizations.of(context)!.lbl_full_name,
             ),
             Box.h(12),
-            const MyTextFormField(
-              title: 'Email',
+            MyTextFormField(
+              title: AppLocalizations.of(context)!.lbl_full_email,
             ),
             Box.h(12),
             Row(
               children: [
-                const Expanded(
+                Expanded(
                   child: MyTextFormField(
-                    title: 'Document',
+                    title: AppLocalizations.of(context)!.lbl_document,
                   ),
                 ),
                 Box.w(8),
-                const Expanded(
+                Expanded(
                   child: MyTextFormField(
-                    title: 'CREP',
+                    title: AppLocalizations.of(context)!.lbl_crep,
                   ),
                 ),
               ],
@@ -87,15 +88,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
             Box.h(12),
             Row(
               children: [
-                const Expanded(
+                Expanded(
                   child: MyTextFormField(
-                    title: 'Zip Code',
+                    title: AppLocalizations.of(context)!.lbl_zip_code,
                   ),
                 ),
                 Box.w(8),
                 Expanded(
                   child: MyDropdown<StateModel>(
-                    hintText: "State",
+                    hintText: AppLocalizations.of(context)!.lbl_state,
                     options: states,
                     value: selectState,
                     onChanged: (value) {
@@ -109,25 +110,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ],
             ),
             Box.h(12),
-            const MyTextFormField(
-              title: 'City',
+            MyTextFormField(
+              title: AppLocalizations.of(context)!.lbl_city,
             ),
             Box.h(12),
-            const MyTextFormField(
-              title: 'Street',
+            MyTextFormField(
+              title: AppLocalizations.of(context)!.lbl_street,
             ),
             Box.h(12),
             Row(
               children: [
-                const Expanded(
+                Expanded(
                   child: MyTextFormField(
-                    title: 'Number',
+                    title: AppLocalizations.of(context)!.lbl_number,
                   ),
                 ),
                 Box.w(8),
-                const Expanded(
+                Expanded(
                   child: MyTextFormField(
-                    title: 'Complement',
+                    title: AppLocalizations.of(context)!.lbl_complement,
                   ),
                 ),
               ],
@@ -135,22 +136,22 @@ class _RegisterScreenState extends State<RegisterScreen> {
             Box.h(12),
             Row(
               children: [
-                const Expanded(
+                Expanded(
                   child: MyTextFormField(
-                    title: 'DDD',
+                    title: AppLocalizations.of(context)!.lbl_ddd,
                   ),
                 ),
                 Box.w(8),
-                const Expanded(
+                Expanded(
                   child: MyTextFormField(
-                    title: 'Telephone',
+                    title: AppLocalizations.of(context)!.lbl_telephone,
                   ),
                 ),
               ],
             ),
             Box.h(20),
             ButtonPrimary(
-              text: 'Next',
+              text: AppLocalizations.of(context)!.lbl_next,
               action: () {
                 AppNavigator.push(Routes.register2Screen);
               },

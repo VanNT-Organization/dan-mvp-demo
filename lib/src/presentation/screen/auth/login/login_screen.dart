@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mvp/src/utils/utils.dart';
+import '../../../../../l10n/gen/app_localizations.dart';
 import '../../main/main_screen.dart';
 import '../../../../gen/assets.gen.dart';
 import '../../../widgets/export.dart';
@@ -39,27 +41,27 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             Box.h(50),
             Text(
-              'Log in',
+              AppLocalizations.of(context)!.lbl_sign_in,
               style: AppFont.t.s(36).w700.blueLv2,
             ),
             Box.h(26),
             Text(
-              'Please enter your account details to log in.',
+             AppLocalizations.of(context)!.lbl_input_account_guide,
               style: AppFont.t.s(12).w700,
             ),
             Box.h(26),
             MyTextFormField(
-              title: 'Username',
+              title:AppLocalizations.of(context)!.lbl_user_name,
               controller: userNameCtl,
             ),
             Box.h(26),
             MyTextFormField(
-              title: 'Password',
+              title:AppLocalizations.of(context)!.lbl_password,
               controller: passwordCtl,
             ),
             Box.h(26),
             ButtonPrimary(
-              text: 'Sign up',
+              text:AppLocalizations.of(context)!.lbl_sign_up,
               action: () {
                 if (userNameCtl.text == 'coach' && passwordCtl.text == '123') {
                   AppNavigator.pushNamedAndRemoveUntil(Routes.mainScreen,
@@ -75,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
             InkWell(
               onTap: () {},
               child: Text(
-                'Forgot your password?',
+               AppLocalizations.of(context)!.lbl_forgot_pass,
                 style: AppFont.t.s(14).w500.blueLv2.underline,
               ),
             ),
@@ -93,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Assets.images.appleLogo.svg(color: Palette.white),
                     Box.w(10),
                     Text(
-                      'Sign up with Apple',
+                     AppLocalizations.of(context)!.lbl_sign_up_apple,
                       style: AppFont.t.s(21).w500.white,
                     )
                   ],
@@ -114,7 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Assets.images.facebookLogo.image(),
                     Box.w(10),
                     Text(
-                      'Continue with Facebook',
+                     AppLocalizations.of(context)!.lbl_sign_in_facebook,
                       style: AppFont.t.s(21).w500.white,
                     )
                   ],
@@ -123,12 +125,12 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Box.h(28),
             Text(
-              'New customer?',
+             AppLocalizations.of(context)!.lbl_new_customer,
               style: AppFont.t.s(24).w700.blueLv2,
             ),
             Box.h(36),
             ButtonPrimary(
-              text: 'Register',
+              text:AppLocalizations.of(context)!.lbl_register,
               color: Palette.blueLv3,
               textStyle: AppFont.t.s(21).w500.blueLv2,
               action: () {

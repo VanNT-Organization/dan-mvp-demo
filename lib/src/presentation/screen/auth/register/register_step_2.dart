@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:mvp/src/gen/assets.gen.dart';
 import 'package:mvp/src/presentation/widgets/export.dart';
 
+import '../../../../../l10n/gen/app_localizations.dart';
 import '../../../configs/config.dart';
 import '../../../widgets/drop_down/drop_down.dart';
 
@@ -21,7 +22,7 @@ class _Register2ScreenState extends State<Register2Screen> {
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBar: const MyAppBar(title: 'Register'),
+      appBar: MyAppBar(title: AppLocalizations.of(context)!.lbl_register,),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -34,7 +35,7 @@ class _Register2ScreenState extends State<Register2Screen> {
                   right: 40,
                   child: Column(
                     children: [
-                      Text('MMC', style: AppFont.t.s(20).w700),
+                      Text(AppLocalizations.of(context)!.lbl_mmc, style: AppFont.t.s(20).w700),
                       Text('20', style: AppFont.t.s(20).w400),
                     ],
                   ),
@@ -46,7 +47,7 @@ class _Register2ScreenState extends State<Register2Screen> {
               children: [
                 Expanded(
                   child: MyDropdown(
-                    hintText: "Gender",
+                    hintText: AppLocalizations.of(context)!.lbl_gender,
                     options: genders,
                     value: selectGender,
                     onChanged: (String? value) {
@@ -58,9 +59,9 @@ class _Register2ScreenState extends State<Register2Screen> {
                   ),
                 ),
                 Box.w(8),
-                const Expanded(
+                Expanded(
                   child: MyTextFormField(
-                    title: 'Weight',
+                    title: AppLocalizations.of(context)!.lbl_weight,
                   ),
                 ),
               ],
@@ -68,26 +69,26 @@ class _Register2ScreenState extends State<Register2Screen> {
             Box.h(12),
             Row(
               children: [
-                const Expanded(
+                Expanded(
                   child: MyTextFormField(
-                    title: 'Zip Code',
+                    title: AppLocalizations.of(context)!.lbl_zip_code,
                   ),
                 ),
                 Box.w(8),
-                const Expanded(
+                Expanded(
                   child: MyTextFormField(
-                    title: 'State',
+                    title: AppLocalizations.of(context)!.lbl_state,
                   ),
                 ),
               ],
             ),
             Box.h(12),
-            const MyTextFormField(
-              title: 'Objective',
+            MyTextFormField(
+              title: AppLocalizations.of(context)!.lbl_objective,
             ),
             Box.h(20),
             ButtonPrimary(
-              text: 'Next',
+              text: AppLocalizations.of(context)!.lbl_next,
               action: () {
                 AppNavigator.push(Routes.register3Screen);
               },
