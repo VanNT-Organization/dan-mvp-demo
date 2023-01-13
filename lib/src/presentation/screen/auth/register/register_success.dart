@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvp/src/utils/extentions/extentions.dart';
 import '../../../../../l10n/gen/app_localizations.dart';
 import '../../../widgets/export.dart';
 
@@ -18,7 +19,7 @@ class RegisterSuccessScreen extends StatelessWidget {
           Assets.images.success.svg(),
           Box.h(50),
           Text(
-            AppLocalizations.of(context)!.lbl_register_success,
+            context.l10n.lbl_register_success,
             style: AppFont.t.s(20).w700,
             textAlign: TextAlign.center,
           ),
@@ -26,7 +27,7 @@ class RegisterSuccessScreen extends StatelessWidget {
           Assets.images.email.svg(),
           Box.h(50),
           Text(
-            AppLocalizations.of(context)!.lbl_link_to_email,
+            context.l10n.lbl_link_to_email,
             style: AppFont.t.s(24).w500,
             textAlign: TextAlign.center,
           ),
@@ -36,7 +37,7 @@ class RegisterSuccessScreen extends StatelessWidget {
               AppNavigator.pushNamedAndRemoveUntil(Routes.loginScreen);
             },
             child: Text(
-              AppLocalizations.of(context)!.lbl_go_to_sign_in,
+              context.l10n.lbl_go_to_sign_in,
               style: AppFont.t.s(24).w700.blueLv2,
               textAlign: TextAlign.center,
             ),

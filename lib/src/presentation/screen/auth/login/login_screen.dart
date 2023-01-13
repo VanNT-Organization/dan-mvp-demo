@@ -41,27 +41,27 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             Box.h(50),
             Text(
-              AppLocalizations.of(context)!.lbl_sign_in,
+              context.l10n.lbl_sign_in,
               style: AppFont.t.s(36).w700.blueLv2,
             ),
             Box.h(26),
             Text(
-             AppLocalizations.of(context)!.lbl_input_account_guide,
+             context.l10n.lbl_input_account_guide,
               style: AppFont.t.s(12).w700,
             ),
             Box.h(26),
             MyTextFormField(
-              title:AppLocalizations.of(context)!.lbl_user_name,
+              title:context.l10n.lbl_user_name,
               controller: userNameCtl,
             ),
             Box.h(26),
             MyTextFormField(
-              title:AppLocalizations.of(context)!.lbl_password,
+              title:context.l10n.lbl_password,
               controller: passwordCtl,
             ),
             Box.h(26),
             ButtonPrimary(
-              text:AppLocalizations.of(context)!.lbl_sign_up,
+              text:context.l10n.lbl_sign_up,
               action: () {
                 if (userNameCtl.text == 'coach' && passwordCtl.text == '123') {
                   AppNavigator.pushNamedAndRemoveUntil(Routes.mainScreen,
@@ -77,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
             InkWell(
               onTap: () {},
               child: Text(
-               AppLocalizations.of(context)!.lbl_forgot_pass,
+               context.l10n.lbl_forgot_pass,
                 style: AppFont.t.s(14).w500.blueLv2.underline,
               ),
             ),
@@ -95,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Assets.images.appleLogo.svg(color: Palette.white),
                     Box.w(10),
                     Text(
-                     AppLocalizations.of(context)!.lbl_sign_up_apple,
+                     context.l10n.lbl_sign_up_apple,
                       style: AppFont.t.s(21).w500.white,
                     )
                   ],
@@ -116,7 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Assets.images.facebookLogo.image(),
                     Box.w(10),
                     Text(
-                     AppLocalizations.of(context)!.lbl_sign_in_facebook,
+                     context.l10n.lbl_sign_in_facebook,
                       style: AppFont.t.s(21).w500.white,
                     )
                   ],
@@ -125,12 +125,12 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Box.h(28),
             Text(
-             AppLocalizations.of(context)!.lbl_new_customer,
+             context.l10n.lbl_new_customer,
               style: AppFont.t.s(24).w700.blueLv2,
             ),
             Box.h(36),
             ButtonPrimary(
-              text:AppLocalizations.of(context)!.lbl_register,
+              text:context.l10n.lbl_register,
               color: Palette.blueLv3,
               textStyle: AppFont.t.s(21).w500.blueLv2,
               action: () {

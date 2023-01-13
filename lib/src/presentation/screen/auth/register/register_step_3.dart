@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvp/src/utils/extentions/extentions.dart';
 import '../../../../../l10n/gen/app_localizations.dart';
 import '../../../../gen/assets.gen.dart';
 import '../../../widgets/export.dart';
@@ -12,7 +13,7 @@ class Register3Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MyScaffold(
       appBar: MyAppBar(
-        title: AppLocalizations.of(context)!.lbl_register,
+        title: context.l10n.lbl_register,
       ),
       child: SingleChildScrollView(
         child: Column(
@@ -31,7 +32,7 @@ class Register3Screen extends StatelessWidget {
                   Assets.images.cloud.svg(),
                   Box.w(8),
                   Text(
-                    AppLocalizations.of(context)!.lbl_add_video,
+                    context.l10n.lbl_add_video,
                     style: AppFont.t.s(12).w500.hint,
                   )
                 ],
@@ -41,7 +42,7 @@ class Register3Screen extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  AppLocalizations.of(context)!.lbl_about_me,
+                  context.l10n.lbl_about_me,
                   style: AppFont.t.s(12).w700,
                 ),
                 Box.w(8),
@@ -54,7 +55,7 @@ class Register3Screen extends StatelessWidget {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 contentPadding: const EdgeInsets.all(0),
-                hintText: AppLocalizations.of(context)!.lbl_your_des,
+                hintText: context.l10n.lbl_your_des,
                 hintStyle: AppFont.t.s(12).w700.greyLv2,
               ),
             ),
@@ -62,7 +63,7 @@ class Register3Screen extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  AppLocalizations.of(context)!.lbl_graduation,
+                  context.l10n.lbl_graduation,
                   style: AppFont.t.s(12).w700,
                 ),
                 Box.w(8),
@@ -75,7 +76,7 @@ class Register3Screen extends StatelessWidget {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 contentPadding: const EdgeInsets.all(0),
-                hintText: AppLocalizations.of(context)!.lbl_your_training,
+                hintText: context.l10n.lbl_your_training,
                 hintStyle: AppFont.t.s(12).w700.greyLv2,
               ),
             ),
@@ -83,7 +84,7 @@ class Register3Screen extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  AppLocalizations.of(context)!.lbl_social_media,
+                  context.l10n.lbl_social_media,
                   style: AppFont.t.s(12).w700,
                 ),
                 Box.w(4),
@@ -99,13 +100,13 @@ class Register3Screen extends StatelessWidget {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 contentPadding: const EdgeInsets.all(0),
-                hintText: AppLocalizations.of(context)!.lbl_your_training,
+                hintText: context.l10n.lbl_your_training,
                 hintStyle: AppFont.t.s(12).w700.greyLv2,
               ),
             ),
             Box.h(12),
             Text(
-              AppLocalizations.of(context)!.lbl_price,
+              context.l10n.lbl_price,
               style: AppFont.t.s(12).w700,
             ),
             const Divider(color: Palette.black),
@@ -114,30 +115,30 @@ class Register3Screen extends StatelessWidget {
               children: [
                 Expanded(
                   child: MyTextFormField(
-                    title: AppLocalizations.of(context)!.lbl_minimum,
+                    title: context.l10n.lbl_minimum,
                   ),
                 ),
                 Box.w(8),
                 Expanded(
                   child: MyTextFormField(
-                    title: AppLocalizations.of(context)!.lbl_maximum,
+                    title: context.l10n.lbl_maximum,
                   ),
                 ),
               ],
             ),
             Box.h(12),
             Text(
-              AppLocalizations.of(context)!.lbl_specialties,
+              context.l10n.lbl_specialties,
               style: AppFont.t.s(12).w700,
             ),
             const Divider(color: Palette.black),
             Box.h(10),
             MyTextFormField(
-              title: AppLocalizations.of(context)!.lbl_description,
+              title: context.l10n.lbl_description,
             ),
             Box.h(20),
             ButtonPrimary(
-              text: AppLocalizations.of(context)!.lbl_register,
+              text: context.l10n.lbl_register,
               action: () {
                 AppNavigator.push(Routes.registerSuccessScreen);
               },

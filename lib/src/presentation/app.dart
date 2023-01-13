@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../l10n/gen/app_localizations.dart';
+import '../../l10n/l10n.dart';
 import 'configs/config.dart';
 
 class MyApp extends StatelessWidget {
@@ -14,6 +16,8 @@ class MyApp extends StatelessWidget {
         return GestureDetector(
           onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
           child: MaterialApp(
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            supportedLocales: L10n.all,
             debugShowCheckedModeBanner: false,
             onGenerateRoute: AppNavigator.getRoute,
             navigatorKey: AppNavigator.navigatorKey,

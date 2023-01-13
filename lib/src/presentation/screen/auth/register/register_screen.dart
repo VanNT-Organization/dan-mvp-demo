@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:mvp/src/gen/assets.gen.dart';
 import 'package:mvp/src/presentation/widgets/export.dart';
+import 'package:mvp/src/utils/extentions/extentions.dart';
 
 import '../../../../../l10n/gen/app_localizations.dart';
 import '../../../configs/config.dart';
@@ -26,7 +27,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBar: MyAppBar(title: AppLocalizations.of(context)!.lbl_register),
+      appBar: MyAppBar(title: context.l10n.lbl_register),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -46,7 +47,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       Assets.images.cloud.svg(),
                       Box.w(8),
                       Text(
-                        AppLocalizations.of(context)!.lbl_add_photo,
+                        context.l10n.lbl_add_photo,
                         style: AppFont.t.s(12).w500.hint,
                       )
                     ]),
@@ -63,24 +64,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
             Box.h(12),
             MyTextFormField(
-              title: AppLocalizations.of(context)!.lbl_full_name,
+              title: context.l10n.lbl_full_name,
             ),
             Box.h(12),
             MyTextFormField(
-              title: AppLocalizations.of(context)!.lbl_full_email,
+              title: context.l10n.lbl_full_email,
             ),
             Box.h(12),
             Row(
               children: [
                 Expanded(
                   child: MyTextFormField(
-                    title: AppLocalizations.of(context)!.lbl_document,
+                    title: context.l10n.lbl_document,
                   ),
                 ),
                 Box.w(8),
                 Expanded(
                   child: MyTextFormField(
-                    title: AppLocalizations.of(context)!.lbl_crep,
+                    title: context.l10n.lbl_crep,
                   ),
                 ),
               ],
@@ -90,13 +91,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
               children: [
                 Expanded(
                   child: MyTextFormField(
-                    title: AppLocalizations.of(context)!.lbl_zip_code,
+                    title: context.l10n.lbl_zip_code,
                   ),
                 ),
                 Box.w(8),
                 Expanded(
                   child: MyDropdown<StateModel>(
-                    hintText: AppLocalizations.of(context)!.lbl_state,
+                    hintText: context.l10n.lbl_state,
                     options: states,
                     value: selectState,
                     onChanged: (value) {
@@ -111,24 +112,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
             Box.h(12),
             MyTextFormField(
-              title: AppLocalizations.of(context)!.lbl_city,
+              title: context.l10n.lbl_city,
             ),
             Box.h(12),
             MyTextFormField(
-              title: AppLocalizations.of(context)!.lbl_street,
+              title: context.l10n.lbl_street,
             ),
             Box.h(12),
             Row(
               children: [
                 Expanded(
                   child: MyTextFormField(
-                    title: AppLocalizations.of(context)!.lbl_number,
+                    title: context.l10n.lbl_number,
                   ),
                 ),
                 Box.w(8),
                 Expanded(
                   child: MyTextFormField(
-                    title: AppLocalizations.of(context)!.lbl_complement,
+                    title: context.l10n.lbl_complement,
                   ),
                 ),
               ],
@@ -138,20 +139,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
               children: [
                 Expanded(
                   child: MyTextFormField(
-                    title: AppLocalizations.of(context)!.lbl_ddd,
+                    title: context.l10n.lbl_ddd,
                   ),
                 ),
                 Box.w(8),
                 Expanded(
                   child: MyTextFormField(
-                    title: AppLocalizations.of(context)!.lbl_telephone,
+                    title: context.l10n.lbl_telephone,
                   ),
                 ),
               ],
             ),
             Box.h(20),
             ButtonPrimary(
-              text: AppLocalizations.of(context)!.lbl_next,
+              text: context.l10n.lbl_next,
               action: () {
                 AppNavigator.push(Routes.register2Screen);
               },
